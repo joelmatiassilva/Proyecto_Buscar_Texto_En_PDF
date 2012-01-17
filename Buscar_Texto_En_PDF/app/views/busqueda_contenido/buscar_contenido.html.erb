@@ -1,0 +1,20 @@
+<h1>Buscar contenido del PDF!</h1>
+<%= form_tag("/buscar", :method =>:get) do %>
+ <p>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Buscar", :contenido => nil %>
+ </p>
+<% end %>
+
+<p>
+
+<% if @pdfs != nil %>
+	<% for pdf in @pdfs %>
+          <div>
+		  <a href="<%=File.expand_path("~/Proyectos_SGM/Buscar_Texto_En_PDF/public/")+ pdf.nombreArchivo.to_s %>"><h2><p><%= pdf.nombreArchivo %></p></h2></a>
+		 <p><%= raw(@pdfs.excerpt_for(pdf.contenido)) %></p>
+	    </p>
+	    </p>
+	  </div>
+	<% end %>
+<% end %>

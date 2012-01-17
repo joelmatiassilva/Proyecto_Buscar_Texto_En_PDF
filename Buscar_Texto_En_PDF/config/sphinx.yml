@@ -1,0 +1,9 @@
+development:
+ address: 127.0.0.1
+ port: 9313
+test:
+ address: 127.0.0.1
+ port: 9314
+production:
+ address: 127.0.0.1
+ port: 9313
